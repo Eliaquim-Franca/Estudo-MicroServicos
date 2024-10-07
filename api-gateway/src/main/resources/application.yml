@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true #Agora podemos acessar a URL passando apenas a porta da API gateway e nome do servi�o ex: http://localhost:8765/PAYROLL-SERVICE/api/payments/1
+          lower-case-service-id: true #assim podemos colocar em minusculo ex: http://localhost:8765/payroll-service/api/payments/1
+
+
+server:
+  port: ${PORT:8765}
+
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_URL:http://localhost:8761/eureka}

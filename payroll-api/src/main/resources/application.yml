@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: payroll-api
+server:
+  port: 8100
+
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_URL:http://localhost:8761/eureka}
+      #tem que deixar defaultZone em camel case pois se não o container não vai identificar.
